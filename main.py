@@ -53,7 +53,7 @@ def get_news():
 def get_random_quote():
     url = "https://api.quotable.io/random"
     try:
-        response = requests.get(url, timeout=30) # verify=False
+        response = requests.get(url, timeout=30, verify=False)
         response.raise_for_status()
         return response.json().get('content', 'No quote available')
     except requests.exceptions.RequestException as e:
